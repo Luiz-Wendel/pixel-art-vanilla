@@ -1,4 +1,5 @@
 const palleteContainer = document.querySelector('.pallete-container');
+const board = document.querySelector('.board');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -42,6 +43,27 @@ const addColorToPallete = (quantity, color) => {
   }
 };
 
+const addBoardCells = (fatherElement, quantity) => {
+  for (let index = 0; index < quantity; index += 1) {
+    const boardCellElement = createElement('div');
+    boardCellElement.classList.add('board-cell');
+
+    fatherElement.appendChild(boardCellElement);
+  }
+};
+
+const createBoard = (size = 5) => {
+  for (let index = 0; index < size; index += 1) {
+    const boardRowElement = createElement('div');
+    boardRowElement.classList.add('board-row');
+
+    addBoardCells(boardRowElement, size);
+
+    board.appendChild(boardRowElement);
+  }
+};
+
 window.onload = () => {
   addColorToPallete(4);
+  createBoard();
 };
