@@ -45,7 +45,7 @@ const addColorToPallete = (quantity, color) => {
 
 const addBoardCells = (fatherElement, quantity) => {
   for (let index = 0; index < quantity; index += 1) {
-    const boardCellElement = createElement('div');
+    const boardCellElement = createElement('section');
     boardCellElement.classList.add('board-cell');
 
     fatherElement.appendChild(boardCellElement);
@@ -54,7 +54,7 @@ const addBoardCells = (fatherElement, quantity) => {
 
 const createBoard = (size = 5) => {
   for (let index = 0; index < size; index += 1) {
-    const boardRowElement = createElement('div');
+    const boardRowElement = createElement('section');
     boardRowElement.classList.add('board-row');
 
     addBoardCells(boardRowElement, size);
