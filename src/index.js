@@ -16,9 +16,11 @@ const generateRandomColor = () => {
 
 const createColorDiv = (color) => {
   const colorElement = createElement('div');
+  const colorString = color ? color : `#${generateRandomColor()}`
 
   colorElement.classList.add('pallete-color');
-  colorElement.dataset.color = color ? color : generateRandomColor();
+  colorElement.dataset.color = colorString;
+  colorElement.style.backgroundColor = colorString;
 
   return colorElement;
 };
