@@ -66,3 +66,25 @@ main {
 .selected {
   box-shadow: 0 0 0 2px var(--success-color);
 }
+
+.board {
+  height: calc(100% - 3.5em);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0;
+}
+
+.board-row {
+  display: table-row;
+}
+
+.board-cell {
+  display: table-cell;
+  background-color: white;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  cursor: pointer;
+}
