@@ -5,6 +5,7 @@ const board = document.querySelector('.board');
 const configsButton = document.querySelector('.configs');
 const configsAside = document.querySelector('.configs-aside');
 const closeAsideButton = document.querySelector('.close-aside');
+const boardSizeInput = document.querySelector('#board-size');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -88,10 +89,17 @@ const toggleAside = ({ target }) => {
   }
 };
 
+const changeBoardSize = ({ target }) => {
+  board.innerHTML = '';
+
+  createBoard(target.value);
+};
+
 window.onload = () => {
   addColorToPallete(4);
   createBoard();
 
   configsButton.addEventListener('click', toggleAside);
   closeAsideButton.addEventListener('click', toggleAside);
+  boardSizeInput.addEventListener('change', changeBoardSize);
 };
