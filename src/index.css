@@ -9,6 +9,8 @@
   --secondary-color: #00adb5;
 
   --success-color: #198754;
+
+  --infinite-spin: spin 4s infinite linear
 }
 
 * {
@@ -32,6 +34,21 @@ main {
 
 .title {
   font-size: 3em;
+}
+
+.configs {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+.configs:hover {
+  color: var(--secondary-color);
+  animation: var(--infinite-spin);
 }
 
 .container {
@@ -87,4 +104,14 @@ main {
   width: 40px;
   border: 1px solid black;
   cursor: pointer;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
