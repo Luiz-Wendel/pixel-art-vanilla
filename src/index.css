@@ -10,7 +10,7 @@
 
   --success-color: #198754;
 
-  --infinite-spin: spin 4s infinite linear
+  --infinite-spin: spin 4s infinite linear;
 }
 
 * {
@@ -104,6 +104,48 @@ main {
   width: 40px;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.configs-aside {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 10vw;
+  background-color: var(--secondary-bg-color);
+  box-shadow: 0 0 5px 0.5em var(--primary-bg-color);
+}
+
+.close-aside {
+  background-color: var(--secondary-bg-color);
+  color: var(--primary-color);
+  margin: 0.5em;
+  border: none;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.close-aside:hover {
+  color: var(--secondary-color);
+  transition: 1s;
+  transform: translateX(0.5em);
+}
+
+.configs-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.config {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+  color: var(--secondary-color);
+  font-weight: 700;
+  padding: 0 1em;
 }
 
 @keyframes spin {
