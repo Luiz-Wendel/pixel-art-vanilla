@@ -7,6 +7,8 @@
   --secondary-bg-color: #393e46;
   --primary-color: #eee;
   --secondary-color: #00adb5;
+
+  --success-color: #198754;
 }
 
 * {
@@ -51,4 +53,8 @@ main {
   border: 2px solid var(--primary-bg-color);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.selected {
+  box-shadow: 0 0 0 2px var(--success-color);
 }
