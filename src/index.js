@@ -1,3 +1,5 @@
+let currentColor = '#fff';
+
 const palleteContainer = document.querySelector('.pallete-container');
 const board = document.querySelector('.board');
 
@@ -21,6 +23,8 @@ const selectColor = (event) => {
 
   if (selectedColorElement) selectedColorElement.classList.toggle('selected');
 
+  currentColor = colorElement.dataset.color;
+
   colorElement.classList.toggle('selected');
 };
 
@@ -43,10 +47,18 @@ const addColorToPallete = (quantity, color) => {
   }
 };
 
+const changeColor = (event) => {
+  const cellElement = event.target;
+
+  cellElement.style.backgroundColor = currentColor;
+};
+
 const addBoardCells = (fatherElement, quantity) => {
   for (let index = 0; index < quantity; index += 1) {
     const boardCellElement = createElement('section');
+
     boardCellElement.classList.add('board-cell');
+    boardCellElement.addEventListener('click', changeColor);
 
     fatherElement.appendChild(boardCellElement);
   }
