@@ -2,6 +2,9 @@ let currentColor = '#fff';
 
 const palleteContainer = document.querySelector('.pallete-container');
 const board = document.querySelector('.board');
+const configsButton = document.querySelector('.configs');
+const configsAside = document.querySelector('.configs-aside');
+const closeAsideButton = document.querySelector('.close-aside');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -75,7 +78,20 @@ const createBoard = (size = 5) => {
   }
 };
 
+const toggleAside = ({ target }) => {
+  if (target.parentElement.classList.contains('configs')) {
+    configsButton.style.display = 'none';
+    configsAside.style.display = 'block';
+  } else {
+    configsButton.style.display = 'block';
+    configsAside.style.display = 'none';
+  }
+};
+
 window.onload = () => {
   addColorToPallete(4);
   createBoard();
+
+  configsButton.addEventListener('click', toggleAside);
+  closeAsideButton.addEventListener('click', toggleAside);
 };
