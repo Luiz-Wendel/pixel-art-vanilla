@@ -45,7 +45,7 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 1em 0;
+  padding: 0.5em 0;
   margin: 0 1em;
   border-bottom: 1px solid var(--primary-bg-color);
 }
@@ -53,9 +53,14 @@ main {
 .pallete-color {
   height: 2em;
   width: 2em;
+  margin: 0.25em;
   border: 2px solid var(--primary-bg-color);
   border-radius: 50%;
   cursor: pointer;
+}
+
+.pallete-color:hover {
+  box-shadow: 0 0 0 2px var(--secondary-color);
 }
 
 .selected {
