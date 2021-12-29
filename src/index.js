@@ -14,6 +14,15 @@ const generateRandomColor = () => {
   return hexString;
 };
 
+const selectColor = (event) => {
+  const colorElement = event.target;
+  const selectedColorElement = document.querySelector('.selected');
+
+  if (selectedColorElement) selectedColorElement.classList.toggle('selected');
+
+  colorElement.classList.toggle('selected');
+};
+
 const createColorDiv = (color) => {
   const colorElement = createElement('div');
   const colorString = color ? color : `#${generateRandomColor()}`
@@ -21,6 +30,7 @@ const createColorDiv = (color) => {
   colorElement.classList.add('pallete-color');
   colorElement.dataset.color = colorString;
   colorElement.style.backgroundColor = colorString;
+  colorElement.addEventListener('click', selectColor);
 
   return colorElement;
 };
