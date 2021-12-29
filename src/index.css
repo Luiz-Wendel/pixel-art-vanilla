@@ -1,0 +1,21 @@
+/*
+  Color pallete from Color Hunt
+  Source: https://colorhunt.co/palette/222831393e4600adb5eeeeee
+*/
+:root {
+  --primary-bg-color: #000;
+  --secondary-bg-color: #393e46;
+  --primary-color: #eee;
+  --secondary-color: #00adb5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-color);
+}
