@@ -1,4 +1,5 @@
-let currentColor = '#fff';
+const initialColor = '#fff'
+let currentColor = initialColor;
 const maxBoardSize = 15;
 
 const palleteContainer = document.querySelector('.pallete-container');
@@ -7,6 +8,7 @@ const configsButton = document.querySelector('.configs');
 const configsAside = document.querySelector('.configs-aside');
 const closeAsideButton = document.querySelector('.close-aside');
 const boardSizeInput = document.querySelector('#board-size');
+const resetBoardButton = document.querySelector('#reset-board');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -98,6 +100,14 @@ const changeBoardSize = ({ target }) => {
   createBoard(target.value);
 };
 
+const resetCellColor = (cell) => cell.style.backgroundColor = initialColor;
+
+const resetBoard = () => {
+  const boardCells = document.querySelectorAll('.board-cell');
+
+  boardCells.forEach(resetCellColor);
+};
+
 window.onload = () => {
   addColorToPallete(4);
   createBoard();
@@ -105,4 +115,5 @@ window.onload = () => {
   configsButton.addEventListener('click', toggleAside);
   closeAsideButton.addEventListener('click', toggleAside);
   boardSizeInput.addEventListener('change', changeBoardSize);
+  resetBoardButton.addEventListener('click', resetBoard);
 };
