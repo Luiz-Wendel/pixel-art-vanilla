@@ -10,6 +10,7 @@ const closeAsideButton = document.querySelector('.close-aside');
 const boardSizeInput = document.querySelector('#board-size');
 const resetBoardButton = document.querySelector('#reset-board');
 const changeColorInput = document.querySelector('#change-color');
+const footer = document.querySelector('footer');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -130,8 +131,19 @@ const setEvents = () => {
   changeColorInput.addEventListener('change', changeSelectedColor);
 };
 
+const addFooterInfo = () => {
+  const paragraph = createElement('p');
+  const year = new Date().getFullYear();
+  const timeSpan = year === 2021 ? year : `2021-${year}`;
+
+  paragraph.innerHTML = `Copyright &copy; ${timeSpan} - Luiz Wendel`;
+
+  footer.appendChild(paragraph);
+};
+
 window.onload = () => {
   addColorToPallete(4);
   createBoard();
   setEvents();
+  addFooterInfo();
 };
