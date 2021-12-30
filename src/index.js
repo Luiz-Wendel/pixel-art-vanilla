@@ -1,4 +1,5 @@
 let currentColor = '#fff';
+const maxBoardSize = 15;
 
 const palleteContainer = document.querySelector('.pallete-container');
 const board = document.querySelector('.board');
@@ -91,6 +92,8 @@ const toggleAside = ({ target }) => {
 
 const changeBoardSize = ({ target }) => {
   board.innerHTML = '';
+
+  if (target.value > maxBoardSize) target.value = maxBoardSize;
 
   createBoard(target.value);
 };
