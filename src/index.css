@@ -149,6 +149,25 @@ main {
   padding: 0 1em;
 }
 
+.config + .config {
+  margin-top: 1em;
+}
+
+#reset-board {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 0.25em;
+  cursor: pointer;
+}
+
+#reset-board:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
