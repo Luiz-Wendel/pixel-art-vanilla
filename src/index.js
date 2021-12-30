@@ -1,6 +1,6 @@
 const initialColor = '#fff'
 let currentColor = initialColor;
-const maxBoardSize = 15;
+const maxBoardSize = 25;
 
 const palleteContainer = document.querySelector('.pallete-container');
 const board = document.querySelector('.board');
