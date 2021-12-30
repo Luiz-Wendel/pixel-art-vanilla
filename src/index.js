@@ -9,6 +9,7 @@ const configsAside = document.querySelector('.configs-aside');
 const closeAsideButton = document.querySelector('.close-aside');
 const boardSizeInput = document.querySelector('#board-size');
 const resetBoardButton = document.querySelector('#reset-board');
+const changeColorInput = document.querySelector('#change-color');
 
 const createElement = (element) => {
   return document.createElement(element);
@@ -26,11 +27,13 @@ const generateRandomColor = () => {
 
 const selectColor = (event) => {
   const colorElement = event.target;
+  const elementColor = colorElement.dataset.color;
   const selectedColorElement = document.querySelector('.selected');
 
   if (selectedColorElement) selectedColorElement.classList.toggle('selected');
 
-  currentColor = colorElement.dataset.color;
+  changeColorInput.value = elementColor;
+  currentColor = elementColor;
 
   colorElement.classList.toggle('selected');
 };
@@ -108,12 +111,27 @@ const resetBoard = () => {
   boardCells.forEach(resetCellColor);
 };
 
-window.onload = () => {
-  addColorToPallete(4);
-  createBoard();
+const changeSelectedColor = ({ target }) => {
+  const newColor = target.value;
+  const selectedColor = document.querySelector('.selected');
 
+  if (selectedColor) {
+    selectedColor.dataset.color = newColor;
+    selectedColor.style.backgroundColor = newColor;
+    currentColor = newColor;
+  }
+};
+
+const setEvents = () => {
   configsButton.addEventListener('click', toggleAside);
   closeAsideButton.addEventListener('click', toggleAside);
   boardSizeInput.addEventListener('change', changeBoardSize);
   resetBoardButton.addEventListener('click', resetBoard);
+  changeColorInput.addEventListener('change', changeSelectedColor);
+};
+
+window.onload = () => {
+  addColorToPallete(4);
+  createBoard();
+  setEvents();
 };
