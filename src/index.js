@@ -1,6 +1,7 @@
 const initialColor = '#fff'
 let currentColor = initialColor;
 const maxBoardSize = 25;
+const initialBoardSize = 10;
 
 const palleteContainer = document.querySelector('.pallete-container');
 const board = document.querySelector('.board');
@@ -75,7 +76,7 @@ const addBoardCells = (fatherElement, quantity) => {
   }
 };
 
-const createBoard = (size = 5) => {
+const createBoard = (size = initialBoardSize) => {
   for (let index = 0; index < size; index += 1) {
     const boardRowElement = createElement('section');
     boardRowElement.classList.add('board-row');
