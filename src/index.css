@@ -114,9 +114,10 @@ main {
   top: 0;
   right: 0;
   height: 100vh;
-  width: 10vw;
+  width: 15em;
   background-color: var(--secondary-bg-color);
   box-shadow: 0 0 5px 0.5em var(--primary-bg-color);
+  z-index: 5;
 }
 
 .close-aside {
